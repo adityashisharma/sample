@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo Webpage</title>
+    <style>
+        /* Basic reset and typography */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        /* Main content layout */
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Card container for features */
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        /* Interactive Element Styling */
+        .demo-box {
+            background-color: #e8f4fd;
+            border-left: 5px solid #3498db;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #demo-status {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #2c3e50;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Product Demo</h1>
+        <p>A simple HTML, CSS, and JavaScript sample template</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>About This Template</h2>
+            <p>This is a clean, responsive layout designed to show clients or students how frontend web technologies work together:</p>
+            <ul>
+                <li><strong>HTML5</strong> structural elements.</li>
+                <li><strong>CSS3</strong> styles and modern layouts.</li>
+                <li><strong>JavaScript</strong> logic for live user interaction.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Interactive Component</h2>
+            <p>Click the button below to test out the JavaScript functionality dynamically.</p>
+            
+            <div class="demo-box">
+                <button id="demo-btn">Click Me!</button>
+                <p id="demo-status">The button hasn't been clicked yet.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Simple JavaScript interactivity
+        const button = document.getElementById('demo-btn');
+        const statusText = document.getElementById('demo-status');
+        let clickCount = 0;
+
+        button.addEventListener('click', () => {
+            clickCount++;
+            statusText.textContent = `🎉 Success! You clicked the button ${clickCount} time(s).`;
+            
+            // Randomly change background color of the box for fun visual feedback
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            button.parentElement.style.backgroundColor = "#" + randomColor + "22"; // 22 adds opacity
+        });
+    </script>
+
+</body>
+</html>
